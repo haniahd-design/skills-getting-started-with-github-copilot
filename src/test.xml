@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="snowflake-github-ci-cd" name="Snowflake GitHub CI/CD Architecture">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- GitHub Branches -->
+        <mxCell id="2" value="Dev Branch" style="shape=rectangle;fillColor=#8BC34A;fontColor=#000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="Test Branch" style="shape=rectangle;fillColor=#FF9800;fontColor=#000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Main / Prod Branch" style="shape=rectangle;fillColor=#F44336;fontColor=#000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- CI/CD Jobs -->
+        <mxCell id="5" value="Dev Deployment Job" style="shape=process;fillColor=#8BC34A;" vertex="1" parent="1">
+          <mxGeometry x="220" y="40" width="160" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Test Deployment Job" style="shape=process;fillColor=#FF9800;" vertex="1" parent="1">
+          <mxGeometry x="220" y="120" width="160" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Prod Deployment Job" style="shape=process;fillColor=#F44336;" vertex="1" parent="1">
+          <mxGeometry x="220" y="200" width="160" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Secrets -->
+        <mxCell id="17" value="SF_DEV_SECRET" style="shape=ellipse;fillColor=#8BC34A;" vertex="1" parent="1">
+          <mxGeometry x="220" y="10" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="SF_TEST_SECRET" style="shape=ellipse;fillColor=#FF9800;" vertex="1" parent="1">
+          <mxGeometry x="220" y="90" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="SF_PROD_SECRET" style="shape=ellipse;fillColor=#F44336;" vertex="1" parent="1">
+          <mxGeometry x="220" y="170" width="120" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Snowflake Accounts -->
+        <mxCell id="8" value="Snowflake DEV Account" style="shape=database;fillColor=#8BC34A;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="160" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Snowflake TEST Account" style="shape=database;fillColor=#FF9800;" vertex="1" parent="1">
+          <mxGeometry x="440" y="120" width="160" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Snowflake PROD Account" style="shape=database;fillColor=#F44336;" vertex="1" parent="1">
+          <mxGeometry x="440" y="200" width="160" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Secure Connection Cloud -->
+        <mxCell id="20" value="Secure Connections (API & Network)" style="shape=cloud;fillColor=#BBDEFB;" vertex="1" parent="1">
+          <mxGeometry x="280" y="300" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Connectors -->
+        <mxCell id="11" edge="1" parent="1" source="2" target="5" style="endArrow=block;"/>
+        <mxCell id="12" edge="1" parent="1" source="3" target="6" style="endArrow=block;"/>
+        <mxCell id="13" edge="1" parent="1" source="4" target="7" style="endArrow=block;"/>
+        <mxCell id="14" edge="1" parent="1" source="5" target="8" style="endArrow=block;"/>
+        <mxCell id="15" edge="1" parent="1" source="6" target="9" style="endArrow=block;"/>
+        <mxCell id="16" edge="1" parent="1" source="7" target="10" style="endArrow=block;"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
